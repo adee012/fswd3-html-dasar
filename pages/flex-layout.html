@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <title>Flex Layout</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h1 {
+        padding-bottom: 1rem;
+      }
+
+      .container {
+        width: 400px;
+        height: 525px;
+        background-color: #ffecb4;
+        padding: 15px;
+      }
+
+      .flex-box1 {
+        width: 370px;
+        height: 326px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .box1 {
+        width: 180px;
+        height: 326px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .item {
+        height: 158px;
+        background-color: #2abfb3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box2 {
+        width: 180px;
+        height: 326px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .box2-item1 {
+        background-color: #dcae24;
+        height: 70px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box2-items2 {
+        height: 246px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .box2-items2-item {
+        height: 246px;
+        width: 85px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .item5,
+      .item8 {
+        height: 158px;
+        background-color: #2abfb3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item6,
+      .item7 {
+        height: 78px;
+        background-color: #2abfb3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* box kedua bagian bawah */
+      .flex-box2 {
+        padding-top: 10px;
+        width: 370px;
+        height: 170px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .box3,
+      .box4 {
+        width: 370px;
+        height: 80px;
+      }
+
+      .box3 {
+        display: flex;
+        gap: 10px;
+      }
+
+      .item9 {
+        width: 274px;
+        background-color: #1176d4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item10 {
+        width: 85px;
+        background-color: #f89727;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box4 {
+        background-color: #f14346;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .item1 {
+        background-color: rgb(255, 136, 0);
+      }
+
+      .item2 {
+        background-color: #20d009;
+      }
+
+      .item5 {
+        background-color: #1176d4;
+      }
+
+      .item6 {
+        background-color: #a5bd07;
+      }
+
+      .item7 {
+        background-color: #0b994d;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flex Layout</h1>
+
+    <!-- container / card -->
+    <div class="container">
+      <!-- box pertama -->
+      <div class="flex-box1">
+        <!-- box sebelah kiri -->
+        <div class="box1">
+          <div class="item item1">
+            <i class="fa fa-twitter" style="font-size: 32px; color: white"></i>
+          </div>
+
+          <div class="item item2">
+            <i class="fa fa-github" style="font-size: 28px; color: white"></i>
+          </div>
+        </div>
+
+        <!-- box sebelah kanan -->
+        <div class="box2">
+          <!-- box atas -->
+          <div class="box2-item1 item4">
+            <i class="fa fa-battery" style="font-size: 32px; color: white"></i>
+          </div>
+
+          <!-- box bawah -->
+          <div class="box2-items2">
+            <!-- box kiri -->
+            <div class="box2-items2-item1 box2-items2-item">
+              <div class="item5">
+                <i class="fa fa-wifi" style="font-size: 32px; color: white"></i>
+              </div>
+              <div class="item6">
+                <i
+                  class="fa fa-calculator"
+                  style="font-size: 32px; color: white"
+                ></i>
+              </div>
+            </div>
+            <!-- box kanan -->
+            <div class="box2-items2-item2 box2-items2-item">
+              <div class="item7">
+                <i
+                  class="fa fa-bluetooth-b"
+                  style="font-size: 28px; color: white"
+                ></i>
+              </div>
+              <div class="item8">
+                <i
+                  class="fa fa-chrome"
+                  style="font-size: 32px; color: white"
+                ></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- box bagian bawah -->
+      <div class="flex-box2">
+        <div class="box3">
+          <div class="item9">
+            <i class="fa fa-music" style="font-size: 32px; color: white"></i>
+          </div>
+          <div class="item10">
+            <i class="fa fa-photo" style="font-size: 32px; color: white"></i>
+          </div>
+        </div>
+        <div class="box4">
+          <a href="../index.html" title="Menu Utama"
+            ><i class="fa fa-home" style="font-size: 32px; color: white"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
