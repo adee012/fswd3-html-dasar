@@ -129,11 +129,16 @@ body {
   align-items: center;
   background-color: var(--dark-grey);
   height: 2.7rem;
-  width: 5rem;
+  width: 6.4rem;
   border-radius: 20px;
   color: var(--light-grey);
   cursor: pointer;
   font-size: 14px;
+}
+
+.active-week {
+  background-color: white;
+  color: var(--dark-grey);
 }
 
 .week:hover {
@@ -141,13 +146,13 @@ body {
   color: var(--dark-grey);
 }
 
-.bab1 {
+.main-bab {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.bab1 a {
+.main-bab a {
   text-decoration: none;
 }
 
@@ -165,10 +170,6 @@ body {
   padding: 15px;
 }
 
-.hiden {
-  display: none;
-}
-
 .HTML1 {
   background-color: var(--blue);
   font-size: 18px;
@@ -180,14 +181,4 @@ body {
 
 .flex {
   background-color: var(--yellow);
-}
-
-.all-bab a {
-  text-decoration: none;
-}
-
-.all-bab {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
 }

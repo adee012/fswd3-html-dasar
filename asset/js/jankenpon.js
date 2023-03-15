@@ -34,7 +34,6 @@ function play() {
       }
 
       let hasil;
-
       if (userChoice === computer) {
         hasil = "Seri! Yuk coba lagi";
       } else if (
@@ -57,7 +56,5 @@ function play() {
       console.log("============================");
     }
   }
-
-  // game mulai
 }
 play();

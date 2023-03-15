@@ -10,7 +10,7 @@ console.log(Infinity);
 
 console.log("Arkatama" + 1);
 console.log("Multi Solusindo" + 2 * 5);
-console.log(Nan * 3);
+console.log(NaN * 3);
 
 // tipe data BigInt
 // Sebuah nilai yang bertipe BigInt selalu diakhiri dengan huruf n pada akhir sebyuah nilai integer.
