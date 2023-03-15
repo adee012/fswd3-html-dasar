@@ -144,6 +144,11 @@ body {
 .bab1 {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
+}
+
+.bab1 a {
+  text-decoration: none;
 }
 
 .task-git {
