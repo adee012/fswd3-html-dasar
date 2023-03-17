@@ -4,8 +4,6 @@ const bab = document.querySelector(".main-bab");
 weeks.forEach((week) => {
   const clicked = week.textContent;
   week.addEventListener("click", () => {
-    const actived = week.querySelector("active-week").ariaChecked;
-
     // switch case
     switch (clicked) {
       case "Java Script":
@@ -63,9 +61,31 @@ weeks.forEach((week) => {
           <i class="fa fa-check" style="font-size: 26px; color: black"></i>
           <b><p>Jankenpon</p></b>
         </div></a
+      >
+      
+      <a href="pages/js-html/mapping.html"
+        ><div class="task-git heading">
+          <i class="fa fa-check" style="font-size: 26px; color: black"></i>
+          <b><p>Mapping</p></b>
+        </div></a
+      >
+      
+      <a href="pages/js-html/todo-list.html"
+        ><div class="task-git heading">
+          <i class="fa fa-check" style="font-size: 26px; color: black"></i>
+          <b><p>Todo List</p></b>
+        </div></a
       >`;
         break;
 
+      case "GIT":
+        bab.innerHTML = `<a href="https://adee012.github.io/tugas2-fswd-arkatama/"
+          ><div class="task-git heading">
+            <i class="fa fa-check" style="font-size: 26px; color: black"></i>
+            <b><p>Resume</p></b>
+          </div></a
+        >`;
+        break;
       case "HTML":
         bab.innerHTML = `<!-- heading dan paragraph -->
         <a href="pages/heading.html"
