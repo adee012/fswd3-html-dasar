@@ -1001,49 +1001,77 @@ let mahasiswa = [
   { id: 999, name: "Christeen Paris", gender: "M", score: 82 },
 ];
 
-//gender
-let genderFilterF = mahasiswa.filter(getGenderF);
-let genderFilterM = mahasiswa.filter(getGenderM);
+//filter gender male&female
+const genderFemale = mahasiswa.filter(getGenderF);
+const genderMale = mahasiswa.filter(getGenderM);
 
-//Male start
-//gender
-function getGenderF(element) {
-  return element.gender == "F";
+function getGenderF(value) {
+  return value.gender == "F";
 }
-function getGenderM(element) {
-  return element.gender == "M";
+
+function getGenderM(value) {
+  return value.gender == "M";
 }
-//
-// function getAvg(grades) {
-//   return (
-//     grades.reduce(function (element, c) {
-//       return p + c;
-//     }) / grades.length
-//   );
-// }
 
-// getAvg(grades);
+// mendeklarasikan jumlah female & male
+const female = genderFemale.length;
+const male = genderMale.length;
 
-console.log(genderFilterF);
-console.log(genderFilterM);
-console.log(
-  "Female\n",
-  "Count:",
-  genderFilterF.length,
-  "\n",
-  "Score :",
-  "\n",
-  "Student :",
-  genderFilterF.length
-);
+// mencari nilai masing masing male &female
+const scoreMale = genderMale.map(getScoreM);
+const scoreFemale = genderFemale.map(getScoreF);
 
-console.log(
-  "Female\n",
-  "Count:",
-  genderFilterM.length,
-  "\n",
-  "Score :",
-  "\n",
-  "Student :",
-  genderFilterM.length
-);
+function getScoreM(value) {
+  return value.score;
+}
+
+function getScoreF(value) {
+  return value.score;
+}
+
+// menjumlahkan score
+const sumMale = scoreMale.reduce(sumM, 0);
+const sumFemale = scoreFemale.reduce(sumF, 0);
+function sumM(total, value) {
+  return total + value;
+}
+
+function sumF(total, value) {
+  return total + value;
+}
+
+// average
+const avgMale = sumMale / scoreMale.length;
+const avgFemale = sumFemale / scoreFemale.length;
+
+// Max dan Min
+const maxMale = Math.max(...scoreMale);
+const minMale = Math.min(...scoreMale);
+
+const maxFemale = Math.max(...scoreFemale);
+const minFemale = Math.min(...scoreFemale);
+
+// Hasil
+
+const hasil = {
+  female: {
+    count: female,
+    score: {
+      average: avgFemale,
+      max: maxFemale,
+      min: minFemale,
+    },
+    student: genderFemale,
+  },
+  male: {
+    count: male,
+    score: {
+      average: avgMale,
+      max: maxMale,
+      min: minMale,
+    },
+    student: genderMale,
+  },
+};
+
+console.log(hasil);
