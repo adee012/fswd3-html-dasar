@@ -1,37 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Todo List</title>
-    <!-- Montserrat Google Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List With Local Storage</title>
+    <!-- Font Awesome Icons -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <!-- Stylesheet -->
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
 
-    <!-- LINE AWESOME CDN -->
-    <link
-      rel="stylesheet"
-      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
-    />
+      :root {
+        --primary: #1d1f51;
+        --secondary: #e0edfd;
+      }
+      body {
+        height: 100vh;
+        background-color: #f5f9f2;
+        color: var(--primary);
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .header {
+        background-color: #1d1f51;
+        width: 450px;
+        height: 150px;
+        color: var(--secondary);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      .header-title {
+        text-align: center;
+      }
+
+      .notification-container {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .notification {
+        background-color: white;
+        border-radius: 30px;
+        padding: 10px;
+        width: 100px;
+        height: 35px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: var(--primary);
+      }
+
+      /* list item */
+      .list-container {
+        margin-top: 20px;
+        width: 450px;
+        height: 300px;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+      }
+
+      .list-item {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: var(--secondary);
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        min-height: 80px;
+      }
+
+      .list-text {
+        width: 380px;
+        word-wrap: break-word;
+      }
+
+      .delete-list {
+        font-size: 30px;
+        color: var(--primary);
+      }
+
+      /* input list */
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        width: 450px;
+        align-items: center;
+      }
+
+      .input-container input {
+        width: 380px;
+        height: 50px;
+        border-radius: 30px;
+        border-style: none;
+        background: white;
+        color: var(--primary);
+        padding: 20px;
+        border: 1px solid var(--secondary);
+      }
+
+      .button-input-submit {
+        color: var(--primary);
+        font-size: 50px;
+      }
+
+      .button-input-submit:hover,
+      .delete-list:hover {
+        opacity: 0.9;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
-      <div class="card">
-        <div class="card-body">This is some text within a card body.</div>
+      <div class="header">
+        <div class="header-title">
+          <h1>To Do</h1>
+        </div>
+        <div class="notification-container">
+          <div class="notification">
+            <p task-notification>Task 5</p>
+            <i class="fas fa-running"></i>
+          </div>
+          <div class="notification">
+            <p finish-notification>Task 5</p>
+            <i class="fas fa-running"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="list-container" list-container>
+        <ul id="myUL"></ul>
+      </div>
+
+      <div class="input-container">
+        <input type="text" class="input-list" input-list />
+        <span onclick="newElement()" class="addBtn">ADD</span>
+        <i class="fas fa-plus-circle button-input-submit" input-submit></i>
       </div>
     </div>
-
-    <!-- bootstrap script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- js script -->
-    <script src="../../asset/js/todo.js"></script>
+    <!-- Script -->
+    <script src="../../asset/js/api.js"></script>
   </body>
 </html>

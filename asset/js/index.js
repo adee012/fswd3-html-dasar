@@ -70,7 +70,7 @@ weeks.forEach((week) => {
         </div></a
       >
       
-      <a href="pages/js-html/todo-list.html"
+      <a href="pages/js-html/todo.html"
         ><div class="task-git heading">
           <i class="fa fa-check" style="font-size: 26px; color: black"></i>
           <b><p>Todo List</p></b>
