@@ -24,7 +24,7 @@ function render() {
   let task = 0;
   let finish = 0;
 
-  storeData.forEach((data) => {
+  storeData.map((data) => {
     data.finish ? finish++ : task++;
 
     const listItem = document.createElement("div");
@@ -92,9 +92,10 @@ function saveData() {
 }
 
 // ambil data dari localStorage
-// function getData() {
-//   storeData = JSON.parse(localStorage.getItem(KEY));
-// }
+function getData() {
+  const bro = JSON.parse(localStorage.getItem(KEY));
+  return bro;
+}
 
 getData();
 render();

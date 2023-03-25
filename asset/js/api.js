@@ -5,15 +5,17 @@ const url = baseUrl + apiKey + "/todos";
 let todos = [];
 
 loadTodos();
+
 function newElement() {
-  var input = document.getElementsByClassName("input-list").value;
-  if (input == "") {
+  var inputText = document.querySelector(".input-list");
+
+  if (!inputText) {
     alert("Tidak Boleh Kosong!");
     return;
   }
 
   const todo = {
-    title: input,
+    title: inputText,
     checked: false,
   };
 

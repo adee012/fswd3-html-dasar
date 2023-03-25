@@ -1,83 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Bootstrap link -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
-      crossorigin="anonymous"
-    />
-
-    <!-- Bootstrap Icon -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List With Local Storage</title>
+    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     />
-
-    <!-- My Style -->
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
     <style>
-      i {
-        cursor: pointer;
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
       }
 
-      i:hover {
-        filter: brightness(80%);
+      :root {
+        --primary: #1d1f51;
+        --secondary: #e0edfd;
+      }
+      body {
+        height: 100vh;
+        background-color: #f5f9f2;
+        color: var(--primary);
       }
 
-      .text {
-        text-decoration: line-through;
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .header {
+        background-color: #1d1f51;
+        width: 450px;
+        height: 150px;
+        color: var(--secondary);
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 50px;
+      }
+
+      .header-title {
+        text-align: center;
+      }
+
+      .notification-container {
+        display: flex;
+        margin-top: 20px;
+      }
+
+      .notification {
+        background-color: white;
+        border-radius: 30px;
+        padding: 10px;
+        width: 100px;
+        height: 35px;
+        margin-right: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: var(--primary);
+      }
+
+      /* list item */
+      .list-container {
+        margin-top: 20px;
+        width: 450px;
+        height: 300px;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+      }
+
+      .list-item {
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border: var(--secondary);
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 10px;
+        min-height: 80px;
+      }
+
+      .list-text {
+        width: 380px;
+        word-wrap: break-word;
+      }
+
+      .delete-list {
+        font-size: 30px;
+        color: var(--primary);
+      }
+
+      /* input list */
+      .input-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        width: 450px;
+        align-items: center;
+      }
+
+      .input-container input {
+        width: 380px;
+        height: 50px;
+        border-radius: 30px;
+        border-style: none;
+        background: white;
+        color: var(--primary);
+        padding: 20px;
+        border: 1px solid var(--secondary);
+      }
+
+      .button-input-submit {
+        color: var(--primary);
+        font-size: 50px;
+      }
+
+      .button-input-submit:hover,
+      .delete-list:hover {
+        opacity: 0.9;
       }
     </style>
-
-    <title>My Todo List</title>
   </head>
-
   <body>
     <div class="container">
-      <div class="card mt-5 text-center bg-danger">
-        <div class="card-body text-white">
-          <!-- Judul -->
-          <h1 class="display-4 fw-bold">My Todo List</h1>
-          <h2 class="fw-light">Apa Yang Ingin Anda Lakukan ?</h2>
-          <!-- Akhir Judul -->
-
-          <!-- Input User -->
-          <form>
-            <div class="input-group mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="input-user"
-                autofocus
-                autocomplete="off"
-              />
-              <button class="btn btn-primary" type="submit">Button</button>
-            </div>
-          </form>
-          <!-- Akhir Input User -->
-
-          <!-- List Group Todo -->
-          <ul class="list-group text-dark" id="list-group">
-            <!-- Isi dari Todo List -->
-          </ul>
-          <!-- Akhir List Group Todo -->
+      <div class="header">
+        <div class="header-title">
+          <h1>To Do</h1>
+        </div>
+        <div class="notification-container">
+          <div class="notification">
+            <p task-notification>Task 5</p>
+            <i class="fas fa-running"></i>
+          </div>
+          <div class="notification">
+            <p finish-notification>Task 5</p>
+            <i class="fas fa-running"></i>
+          </div>
         </div>
       </div>
+
+      <div class="list-container" list-container>
+        <ul id="myUl"></ul>
+      </div>
+
+      <div class="input-container">
+        <input type="text" class="input-list" input-list />
+        <span class="btn-submit" style="width: 10px">ADD</span>
+        <!-- <i class="fas fa-plus-circle button-input-submit" input-submit></i> -->
+      </div>
     </div>
-
-    <!-- Boostrap Script -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-      crossorigin="anonymous"
-    ></script>
-
-    <!-- My Script -->
-    <script src="../../asset/js/todo.js"></script>
+    <!-- Script -->
+    <script src="../../asset/js/api.js"></script>
   </body>
 </html>

@@ -86,6 +86,15 @@ weeks.forEach((week) => {
           </div></a
         >`;
         break;
+
+      case "Web Design":
+        bab.innerHTML = `<a href="pages/webDesign.html"
+        ><div class="task-git heading">
+          <i class="fa fa-check" style="font-size: 26px; color: black"></i>
+          <b><p>Web Design</p></b>
+        </div></a
+      >`;
+        break;
       case "HTML":
         bab.innerHTML = `<!-- heading dan paragraph -->
         <a href="pages/heading.html"
