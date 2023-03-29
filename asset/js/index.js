@@ -88,10 +88,17 @@ weeks.forEach((week) => {
         break;
 
       case "Web Design":
-        bab.innerHTML = `<a href="pages/webDesign.html"
+        bab.innerHTML = `<a href="pages/web-design/webDesign.html"
         ><div class="task-git heading">
           <i class="fa fa-check" style="font-size: 26px; color: black"></i>
           <b><p>Web Design</p></b>
+        </div></a
+      >
+      
+      <a href="pages/web-design/webDesignFramework.html"
+        ><div class="task-git heading">
+          <i class="fa fa-check" style="font-size: 26px; color: black"></i>
+          <b><p>Web Design Framework</p></b>
         </div></a
       >`;
         break;
